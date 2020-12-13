@@ -1,0 +1,4 @@
+1) Make account in GC
+2) Make app.yaml file and write some code.
+3) Make a new repo in github
+4) Open git bash
