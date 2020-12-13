@@ -1,4 +1,34 @@
-1) Make account in GC
-2) Make app.yaml file and write some code.
-3) Make a new repo in github
-4) Open git bash
+1)Go to GCP cloud create a new project
+2)create a new config file named as app.yaml and put the below content inside this newly create file:- 
+
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT main:application
+runtime_config: 
+  python_version: 3
+manual_scaling: 
+  instances: 1
+resources: 
+  cpu: 1 
+  memory_gb: 0.5 
+  disk_size_gb: 10
+
+
+3) Initialize a local git:
+	git init
+	git add README.md
+	git add .
+	git commit -m "any message for commit"
+
+4) Go to your github.com create a new repo, any name you can provide
+5) Push local code to github repo
+	git branch   # to check branch name
+	git push "repo url" "branch_name"
+
+6) Git Uploading Completed
+
+7) Go to GCP and click on activate cloud shell option, a terminal will get opened
+8) Write- git clone "repo url"
+9) write- cd "project name"
+10) write- gcloud config set project "project id"
+11) write -gcloud app deploy
